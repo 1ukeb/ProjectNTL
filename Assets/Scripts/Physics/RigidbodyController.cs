@@ -9,13 +9,6 @@ namespace NTL.Physics
 
         public Vector3 FacingDirection => transform.forward;
 
-        // setup component
-        private void Awake()
-        {
-            if (!rigidbody)
-                rigidbody = GetComponent<Rigidbody>();
-        }
-
         // move towards where tank is facing
         public void MoveForward(float speed) => rigidbody.velocity = FacingDirection * speed;
 
