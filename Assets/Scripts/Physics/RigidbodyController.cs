@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RigidbodyController : MonoBehaviour
+namespace NTL.Physics
 {
-    // Start is called before the first frame update
-    void Start()
+    [RequireComponent(typeof(Rigidbody))]
+    public class RigidbodyController : MonoBehaviour
     {
-        
-    }
+        [SerializeField] new private Rigidbody rigidbody;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Vector3 FacingDirection => transform.forward;
+
+        // setup component
+        private void Awake()
+        {
+            if (!rigidbody)
+                rigidbody = GetComponent<Rigidbody>();
+        }
+
+        // move towards where tank is facing
+        public void MoveForward(float speed) => rigidbody.velocity = FacingDirection * speed;
+
+        // rotate on z axis around self
+        public void Rotate(float speed) => transform.Rotate(0, speed, 0, Space.Self);
     }
 }
