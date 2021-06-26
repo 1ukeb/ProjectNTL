@@ -6,16 +6,34 @@ namespace NTL.Gameplay
 {
     public class TankWeaponController : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        [SerializeField] private PlayerFup theFupster;
+        [SerializeField] private float timeBetweenShots;
 
+        private Coroutine shootCoroutine;
+
+        private void Start()
+        {
+            EnableShooting();
         }
 
-        // Update is called once per frame
-        void Update()
+        // turns repeat shooting on
+        private void EnableShooting()
         {
+            shootCoroutine = StartCoroutine(ShootTimer());
+        }
 
+        // turns repeat shooting off
+        private void DisableShooting()
+        {
+            StopCoroutine(shootCoroutine);
+        }
+
+        private IEnumerator ShootTimer()
+        {
+            yield return new WaitForSeconds(timeBetweenShots);
+            Debug.Log("Shooting");
+
+            shootCoroutine = StartCoroutine(ShootTimer());
         }
     }
 }

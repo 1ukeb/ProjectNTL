@@ -273,6 +273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63eb878d7c76d5844873c2d8870efd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theFupster: {fileID: 0}
+  timeBetweenShots: 1
 --- !u!1 &1180933118
 GameObject:
   m_ObjectHideFlags: 0
