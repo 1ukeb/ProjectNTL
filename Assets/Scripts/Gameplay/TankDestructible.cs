@@ -14,9 +14,9 @@ namespace NTL.Gameplay
         }
 
         public override void Destruct()
-      {
-          Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-      }
-        
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

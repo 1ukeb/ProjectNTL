@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace NTL.Gameplay
 {
@@ -7,6 +8,8 @@ namespace NTL.Gameplay
         public delegate void DestructEvent();
         // when this is destructed
         public DestructEvent OnDestruct;
+
+        public UnityEvent unityEvent;
 
         public virtual void OnTriggerEnter(Collider col)
         {
@@ -23,6 +26,7 @@ namespace NTL.Gameplay
         public virtual void Destruct()
         {
             OnDestruct?.Invoke();
+            unityEvent?.Invoke();
         }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &988699260823998189
+--- !u!1 &2673948345048801995
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 988699260823998190}
-  - component: {fileID: 544656293}
+  - component: {fileID: 2673948345048801992}
+  - component: {fileID: 2673948345048801993}
   m_Layer: 0
-  m_Name: TankSpawnTransform
+  m_Name: TankSpawner
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &988699260823998190
+--- !u!4 &2673948345048801992
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988699260823998189}
+  m_GameObject: {fileID: 2673948345048801995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,15 +31,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &544656293
+--- !u!114 &2673948345048801993
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988699260823998189}
+  m_GameObject: {fileID: 2673948345048801995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eadefc67c56c4d4bb9b3ccbfd16d5a2, type: 3}
+  m_Script: {fileID: 11500000, guid: b230721196486d048b382fa1a58e583d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnMode: 2
+  tankPrefab: {fileID: 8013906193459264701, guid: 98cdd34acce2683469263a242092a1a9, type: 3}

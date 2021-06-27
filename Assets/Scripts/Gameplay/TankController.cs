@@ -1,5 +1,6 @@
 using UnityEngine;
 using NTL.Physics;
+using NTL.Spawning;
 
 namespace NTL.Gameplay
 {
@@ -24,16 +25,20 @@ namespace NTL.Gameplay
         // rotate speed of tank
         [SerializeField] private float rotateSpeed;
 
+        private void OnEnable() => TankSpawner.activeTanks.Add(this);
+        private void OnDisable() => TankSpawner.activeTanks.Remove(this);
+
         // check input of key
-        private void Update() => keyInput = Input.GetKey(key);
+        private void Update() => keyInput = UnityEngine.Input.GetKey(key);
 
         private void FixedUpdate()
         {
-            controller.MoveForward(speed);
-
             // if key input, rotate controller
             if (keyInput)
                 controller.Rotate(rotateSpeed);
+
+            // move forward
+            controller.MoveForward(speed);
         }
     }
 }
