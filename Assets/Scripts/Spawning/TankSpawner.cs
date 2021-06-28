@@ -55,7 +55,7 @@ namespace NTL.Spawning
             InputManager.OnInput += SpawnWithKey;
         }
 
-        private void PopulateRoundRobinTankTransforms()
+        private void LoadOpenSpawnTransforms()
         {
             // if round robin list empty, repopulate
             openSpawnTransforms = new List<Transform>(spawnTransforms);
@@ -77,7 +77,7 @@ namespace NTL.Spawning
 
                     // if round robin list empty, repopulate
                     if (openSpawnTransforms.Count <= 0)
-                        PopulateRoundRobinTankTransforms();
+                        LoadOpenSpawnTransforms();
 
                     // get random transform from round robin list
                     position = openSpawnTransforms.RemoveRandom().position;
@@ -87,7 +87,7 @@ namespace NTL.Spawning
                 case SpawnMode.RoundRobin:
 
                     if (openSpawnTransforms.Count <= 0)
-                        PopulateRoundRobinTankTransforms();
+                        LoadOpenSpawnTransforms();
 
                     // get transform from end of round robin list
                     position = openSpawnTransforms[openSpawnTransforms.Count - 1].position;
@@ -118,12 +118,6 @@ namespace NTL.Spawning
         {
             // if tank already active, return
             if(IsActiveTank(key))
-                return;
-
-            // create list of tanks with input key already registered
-            List<TankController> matchingTanks = activeTanks.FindAll(k => k.key == key);
-            // if already tank with input key, return
-            if (matchingTanks.Count != 0)
                 return;
 
             // spawn tank

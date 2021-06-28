@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8013906192640996730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: 1.2}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0.95000005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8013906193459264700}
@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 8013906193459264700}
   - component: {fileID: 8013906193459264699}
   - component: {fileID: 8013906193459264695}
+  - component: {fileID: 2109774959}
   - component: {fileID: 8013906193459264698}
   - component: {fileID: 8013906193459264694}
   - component: {fileID: 8013906193459264697}
@@ -98,6 +99,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9
   m_Center: {x: 0, y: 0.85, z: 0}
+--- !u!65 &2109774959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013906193459264701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8, y: 1.7, z: 2.35}
+  m_Center: {x: 0, y: 1.15, z: 0}
 --- !u!114 &8013906193459264698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b2bc592800f254e8ca64141353f007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls: []
   explosionPrefab: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!1 &8013906193769034834
 GameObject:
@@ -442,7 +459,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8013906193769034840}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

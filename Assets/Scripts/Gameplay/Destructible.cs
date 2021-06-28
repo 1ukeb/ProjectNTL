@@ -11,17 +11,17 @@ namespace NTL.Gameplay
 
         public UnityEvent unityEvent;
 
-        public virtual void OnTriggerEnter(Collider col)
-        {
-            // if bullet collision, destruct
-            if (IsValidCollision(col))
-                Destruct();
-        }
+        //public virtual void OnTriggerEnter(Collider col)
+        //{
+        //    // if bullet collision, destruct
+        //    if (IsValidCollision(col))
+        //        Destruct();
+        //}
 
-        public virtual bool IsValidCollision(Collider col)
-        {
-            return col.CompareTag("Bullet");
-        }
+        //public virtual bool IsValidCollision(Collider col)
+        //{
+        //    return col.CompareTag("Bullet");
+        //}
 
         public virtual void Destruct()
         {
