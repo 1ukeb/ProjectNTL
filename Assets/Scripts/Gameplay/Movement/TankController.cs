@@ -1,6 +1,7 @@
 using UnityEngine;
 using NTL.Physics;
 using NTL.Spawning;
+using NTL.Camera;
 
 namespace NTL.Gameplay
 {
@@ -24,9 +25,6 @@ namespace NTL.Gameplay
         [SerializeField] private float speed;
         // rotate speed of tank
         [SerializeField] private float rotateSpeed;
-
-        private void OnEnable() => TankSpawner.activeTanks.Add(this);
-        private void OnDisable() => TankSpawner.activeTanks.Remove(this);
 
         public void AddSpeed(float speed) => this.speed += speed;
         public void RemoveSpeed(float speed) => this.speed -= speed;

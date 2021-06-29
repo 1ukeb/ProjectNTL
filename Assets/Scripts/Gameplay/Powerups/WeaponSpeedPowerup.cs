@@ -11,7 +11,6 @@ namespace NTL.Gameplay
         public override void PowerupStart(Collider col)
         {
             col.GetComponent<TankWeaponController>().RemoveTimeBetweenShots(speedDecrease);
-            UnityEngine.Debug.Log("Dec shot time");
         }
 
         public override void PowerupFinish(Collider col)
