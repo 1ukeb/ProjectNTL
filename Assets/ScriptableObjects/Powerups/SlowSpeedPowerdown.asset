@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6a77445a807ae4c8f4a72330d83853, type: 3}
   m_Name: SlowSpeedPowerdown
   m_EditorClassIdentifier: 
+  time: 3
   speed: -2

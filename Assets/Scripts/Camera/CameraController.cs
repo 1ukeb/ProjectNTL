@@ -26,6 +26,10 @@ namespace NTL.Camera
 
         private void LateUpdate()
         {
+            // if no cam targets, return
+            if (targets.Count == 0)
+                return;
+
             Move();
             Zoom();
         }

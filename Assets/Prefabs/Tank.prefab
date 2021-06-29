@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &298422285
 Transform:
   m_ObjectHideFlags: 0
@@ -127,8 +127,7 @@ GameObject:
   - component: {fileID: 8013906193459264694}
   - component: {fileID: 8013906193459264697}
   - component: {fileID: 8013906193459264692}
-  - component: {fileID: 8013906193459264693}
-  - component: {fileID: 1799621281}
+  - component: {fileID: 1254881957}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
@@ -222,7 +221,7 @@ MonoBehaviour:
   controller: {fileID: 8013906193459264698}
   key: g
   keyInput: 0
-  speed: 0
+  speed: 4
   rotateSpeed: 4
 --- !u!114 &8013906193459264697
 MonoBehaviour:
@@ -253,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankWeapon: {fileID: 8013906193459264697}
   timeBetweenShots: 1
---- !u!114 &8013906193459264693
+--- !u!114 &1254881957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,28 +261,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8013906193459264701}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b2bc592800f254e8ca64141353f007, type: 3}
+  m_Script: {fileID: 11500000, guid: 10939313b45dde34d8c72d77b40b5d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  explosionPrefab: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
---- !u!114 &1799621281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8013906193459264701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d001d6a87904f6240b1d5059b242c949, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
+  maxHealth: 1
+  currentHealth: 1
+  isDead: 0
   isImmune: 0
+  immuneShield: {fileID: 298422284}
+  deathParticle: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!1 &8013906193769034834
 GameObject:
   m_ObjectHideFlags: 0

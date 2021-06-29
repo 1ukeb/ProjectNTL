@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cefad49af2c0916479dc916794a21a28, type: 3}
   m_Name: BasicWeaponSpeedPowerup
   m_EditorClassIdentifier: 
+  time: 4
   speedDecrease: 0.5

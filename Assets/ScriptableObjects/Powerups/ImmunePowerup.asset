@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6a77445a807ae4c8f4a72330d83853, type: 3}
-  m_Name: MegaSpeedPowerup
+  m_Script: {fileID: 11500000, guid: 2a86cb33d47296c4bb9c5d153fc33bfd, type: 3}
+  m_Name: ImmunePowerup
   m_EditorClassIdentifier: 
   time: 3
-  speed: 30
+  immuneTime: 3

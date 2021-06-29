@@ -34,8 +34,8 @@ namespace NTL.Gameplay
 
         public virtual void HandlePlayerCollision(Collider col)
         {
-            TankDestructible destructible = col.GetComponent<TankDestructible>();
-            destructible.Destruct();
+            // deal damage to player
+            col.GetComponent<TankHealth>().TakeDamage(1);
 
             DestroyBullet();
         }
