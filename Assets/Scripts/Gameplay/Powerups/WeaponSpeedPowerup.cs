@@ -2,20 +2,19 @@ using UnityEngine;
 
 namespace NTL.Gameplay
 {
-    public class WeaponSpeedPowerup : TimerPowerup
+    [CreateAssetMenu(menuName = "NTL/Powerups/Weapon Speed")]
+    public class WeaponSpeedPowerup : PowerupSO
     {
-        [Space]
-        [Header("Weapon Speed")]
-        [SerializeField] private float speedDecrease;
+        public float speedDecrease;
 
-        public override void PowerupStart(Collider col)
+        public override void ApplyPowerup(TankEntity tank)
         {
-            col.GetComponent<TankWeaponController>().RemoveTimeBetweenShots(speedDecrease);
+            tank.GetComponent<TankWeaponController>().RemoveTimeBetweenShots(speedDecrease);
         }
 
-        public override void PowerupFinish(Collider col)
+        public override void RemovePowerup(TankEntity tank)
         {
-            col.GetComponent<TankWeaponController>().AddTimeBetweenShots(speedDecrease);
+            tank.GetComponent<TankWeaponController>().AddTimeBetweenShots(speedDecrease);
         }
     }
 }

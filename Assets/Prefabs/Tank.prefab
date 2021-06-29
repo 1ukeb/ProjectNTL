@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 298422288}
   - component: {fileID: 298422287}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   controller: {fileID: 8013906193459264698}
   key: g
   keyInput: 0
-  speed: 4
+  speed: 0
   rotateSpeed: 4
 --- !u!114 &8013906193459264697
 MonoBehaviour:

@@ -5,6 +5,10 @@ namespace NTL.Gameplay
     public class Powerup : MonoBehaviour
     {
         [Space]
+        [Header("Powerup")]
+        [SerializeField] protected PowerupSO powerupSO;
+
+        [Space]
         [Header("Particle")]
         [SerializeField] protected GameObject particle;
 
@@ -25,7 +29,12 @@ namespace NTL.Gameplay
         // apply power up (col is player)
         public virtual void ApplyPowerup(Collider col)
         {
+            powerupSO.ApplyPowerup(col.GetComponent<TankEntity>());
+        }
 
+        public virtual void RemovePowerup(Collider col)
+        {
+            powerupSO.RemovePowerup(col.GetComponent<TankEntity>());
         }
     }
 }

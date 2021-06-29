@@ -2,20 +2,19 @@ using UnityEngine;
 
 namespace NTL.Gameplay
 {
-    public class SpeedPowerup : TimerPowerup
+    [CreateAssetMenu(menuName = "NTL/Powerups/Speed")]
+    public class SpeedPowerup : PowerupSO
     {
-        [Space]
-        [Header("Speed")]
-        [SerializeField] private float speed;
+        public float speed;
 
-        public override void PowerupStart(Collider col)
+        public override void ApplyPowerup(TankEntity tank)
         {
-            col.GetComponent<TankController>().AddSpeed(speed);
+            tank.GetComponent<TankController>().AddSpeed(speed);
         }
 
-        public override void PowerupFinish(Collider col)
+        public override void RemovePowerup(TankEntity tank)
         {
-            col.GetComponent<TankController>().RemoveSpeed(speed);
+            tank.GetComponent<TankController>().RemoveSpeed(speed);
         }
     }
 }
