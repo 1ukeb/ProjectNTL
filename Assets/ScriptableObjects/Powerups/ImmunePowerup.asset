@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a86cb33d47296c4bb9c5d153fc33bfd, type: 3}
   m_Name: ImmunePowerup
   m_EditorClassIdentifier: 
-  time: 3
-  immuneTime: 3
+  time: 6

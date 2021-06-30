@@ -22,9 +22,9 @@ namespace NTL.Gameplay
         [Header("Particles")]
         [SerializeField] private GameObject deathParticle;
 
-        private BoolTimer immuneTimer = new BoolTimer();
-        public void AddImmuneTime(float time) => SetIsImmune(immuneTimer.AddTime(time));
-        public void RemoveImmuneTime(float time) => SetIsImmune(immuneTimer.RemoveTime(time));
+        private BoolCounter immuneCounter = new BoolCounter();
+        public void AddImmune() => SetIsImmune(immuneCounter.Add());
+        public void RemoveImmune() => SetIsImmune(immuneCounter.Remove());
 
         private void SetIsImmune(bool value)
         {

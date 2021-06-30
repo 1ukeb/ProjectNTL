@@ -8,6 +8,9 @@ namespace NTL.Gameplay
         [HideInInspector] public TankWeapon tankWeapon;
 
         public GameObject explosionParticle;
+        public GameObject trailParticle;
+
+        public ParticleSystem[] sys;
 
         public virtual void OnTriggerEnter(Collider col)
         {
@@ -20,6 +23,13 @@ namespace NTL.Gameplay
 
                 HandlePlayerCollision(col);
                 return;
+            }
+
+            if (col.CompareTag("Bullet"))
+            {
+                // if bullet collided with bullet from same tank
+                if (col.GetComponent<Bullet>().tankWeapon == tankWeapon)
+                    return;
             }
 
             // hit other collision
@@ -42,6 +52,17 @@ namespace NTL.Gameplay
 
         public virtual void DestroyBullet()
         {
+            // stop all particles from playing
+            foreach (ParticleSystem s in sys)
+                s.Stop();
+
+            // remove particle transform parent
+            trailParticle.transform.SetParent(null);
+            // add component to destroy particles after they are done 
+            //trailParticle.AddComponent<DestroyParticles>();
+            DestroySeconds ds = trailParticle.AddComponent<DestroySeconds>();
+            ds.SetSeconds(3);
+
             Destroy(gameObject);
         }
     }

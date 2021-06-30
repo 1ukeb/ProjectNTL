@@ -1,5 +1,8 @@
+using UnityEngine;
+
 namespace NTL.Gameplay
 {
+    [CreateAssetMenu(menuName = "NTL/Powerups/Burst Shot")]
     public class BurstShotPowerup : TimedPowerupSO
     {
         public int additionalShots;
