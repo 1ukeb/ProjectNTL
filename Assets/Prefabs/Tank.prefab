@@ -221,7 +221,7 @@ MonoBehaviour:
   controller: {fileID: 8013906193459264698}
   key: g
   keyInput: 0
-  speed: 4
+  speed: 0
   rotateSpeed: 4
 --- !u!114 &8013906193459264697
 MonoBehaviour:
@@ -235,8 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecf6b65d4436d64689c00fc343b2d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3439441360991733172, guid: ffbbc829ec99c5445b085a7e593ef7cb, type: 3}
-  bulletSpeed: 30
+  bulletPrefab: {fileID: 5594042648766532464, guid: 613ee8a6f64b06e4bbcd1bd96ee6512c, type: 3}
+  bulletSpeed: 25
   fireTransform: {fileID: 8013906192640996729}
 --- !u!114 &8013906193459264692
 MonoBehaviour:
@@ -252,6 +252,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankWeapon: {fileID: 8013906193459264697}
   timeBetweenShots: 1
+  minTimeBetweenShots: 0.25
+  maxTimeBetweenShots: 1
 --- !u!114 &1254881957
 MonoBehaviour:
   m_ObjectHideFlags: 0

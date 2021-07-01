@@ -10,7 +10,7 @@ namespace NTL.Gameplay
         public GameObject explosionParticle;
         public GameObject trailParticle;
 
-        public ParticleSystem[] sys;
+        public ParticleSystem[] particleSystems;
 
         public virtual void OnTriggerEnter(Collider col)
         {
@@ -30,6 +30,12 @@ namespace NTL.Gameplay
                 // if bullet collided with bullet from same tank
                 if (col.GetComponent<Bullet>().tankWeapon == tankWeapon)
                     return;
+            }
+
+            // dont collide with powerups
+            if (col.CompareTag("Powerup"))
+            {
+                return;
             }
 
             // hit other collision
@@ -53,11 +59,16 @@ namespace NTL.Gameplay
         public virtual void DestroyBullet()
         {
             // stop all particles from playing
-            foreach (ParticleSystem s in sys)
-                s.Stop();
+            if (particleSystems.Length > 0)
+            {
+                foreach (ParticleSystem s in particleSystems)
+                    s.Stop();
+            }
 
             // remove particle transform parent
-            trailParticle.transform.SetParent(null);
+            if (trailParticle)
+                trailParticle.transform.SetParent(null);
+
             // add component to destroy particles after they are done 
             //trailParticle.AddComponent<DestroyParticles>();
             DestroySeconds ds = trailParticle.AddComponent<DestroySeconds>();
