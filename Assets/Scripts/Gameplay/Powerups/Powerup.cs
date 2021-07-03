@@ -52,7 +52,8 @@ namespace NTL.Gameplay
         // remove powerup
         public virtual void RemovePowerup(Collider col)
         {
-            powerupSO.RemovePowerup(col.GetComponent<TankEntity>());
+            if (col)
+                powerupSO.RemovePowerup(col.GetComponent<TankEntity>());
         }
     }
 }

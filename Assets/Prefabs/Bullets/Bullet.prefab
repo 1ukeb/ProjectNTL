@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3439441360991765270}
   - component: {fileID: -937823251305413496}
   - component: {fileID: 6701335311148620866}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -128,9 +128,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankWeapon: {fileID: 0}
+  damage: 10
   explosionParticle: {fileID: 1312591640859010, guid: ba7ba54e0ea76594c8748942d4d05b1f, type: 3}
   trailParticle: {fileID: 0}
   particleSystems: []
+  tankTarget: {fileID: 0}
 --- !u!114 &6701335311148620866
 MonoBehaviour:
   m_ObjectHideFlags: 0

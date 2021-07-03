@@ -13,10 +13,12 @@ namespace NTL.Gameplay
         [Header("Statuses")]
         [SerializeField] protected bool isDead;
         [SerializeField] protected bool isImmune;
+        [SerializeField] protected bool isTargeted;
 
         [Space]
         [Header("Status Effects")]
         [SerializeField] private GameObject immuneShield;
+        [SerializeField] private GameObject targetedIndicator;
 
         [Space]
         [Header("Particles")]
@@ -29,6 +31,15 @@ namespace NTL.Gameplay
         {
             immuneShield.SetActive(value);
             isImmune = value;
+        }
+
+        private BoolStack targetedStack = new BoolStack();
+        public void AddTargeted() => SetIsTargeted(targetedStack.Add());
+        public void RemoveTargeted() => SetIsTargeted(targetedStack.Remove());
+        private void SetIsTargeted(bool value)
+        {
+            targetedIndicator.SetActive(value);
+            isTargeted = value;
         }
 
         public virtual void Reset()

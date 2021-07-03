@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace NTL.Gameplay
@@ -7,10 +8,16 @@ namespace NTL.Gameplay
         // tank weapon that fired this bullet
         [HideInInspector] public TankWeapon tankWeapon;
 
+        [SerializeField] private int damage = 10;
+
         public GameObject explosionParticle;
         public GameObject trailParticle;
 
         public ParticleSystem[] particleSystems;
+
+        public event Action OnDestroy;
+        // seeking bullet
+        [HideInInspector] public Transform tankTarget;
 
         public virtual void OnTriggerEnter(Collider col)
         {
@@ -51,7 +58,7 @@ namespace NTL.Gameplay
         public virtual void HandlePlayerCollision(Collider col)
         {
             // deal damage to player
-            col.GetComponent<TankHealth>().TakeDamage(1);
+            col.GetComponent<TankHealth>().TakeDamage(damage);
 
             DestroyBullet();
         }
@@ -73,6 +80,11 @@ namespace NTL.Gameplay
             //trailParticle.AddComponent<DestroyParticles>();
             DestroySeconds ds = trailParticle.AddComponent<DestroySeconds>();
             ds.SetSeconds(3);
+
+            if (tankTarget)
+                tankTarget.GetComponent<TankHealth>().RemoveTargeted();
+
+            OnDestroy?.Invoke();
 
             Destroy(gameObject);
         }

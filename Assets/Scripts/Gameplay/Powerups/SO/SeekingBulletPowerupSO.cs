@@ -38,8 +38,12 @@ namespace NTL.Gameplay
 
         private IEnumerator SeekingBullet(TankEntity tank, Transform target)
         {
+            // set target is targeted indicator
+            target.GetComponent<TankHealth>().AddTargeted();
+
             Bullet bullet = Instantiate(bulletPrefab, tank.transform.position + Vector3.up, Quaternion.identity).GetComponent<Bullet>();
             bullet.tankWeapon = tank.GetComponent<TankWeapon>();
+            bullet.tankTarget = target;
 
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
             bulletRigidbody.velocity = Vector3.up * bulletRisingSpeed;
