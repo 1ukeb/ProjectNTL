@@ -5,6 +5,10 @@ namespace NTL.App
     public class AppManager : MonoBehaviour
     {
         public static AppManager Singleton;
-        private void Awake() => Singleton = this;
+        private void Awake()
+        {
+            Singleton = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

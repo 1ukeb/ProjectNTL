@@ -2,6 +2,7 @@ using UnityEngine;
 using NTL.Physics;
 using NTL.Spawning;
 using NTL.Camera;
+using TMPro;
 
 namespace NTL.Gameplay
 {

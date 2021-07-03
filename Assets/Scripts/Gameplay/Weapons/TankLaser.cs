@@ -5,13 +5,21 @@ namespace NTL.Gameplay
 {
     public class TankLaser : MonoBehaviour
     {
+        [Space]
+        [Header("Components")]
         [SerializeField] private Transform fireTransform;
         [SerializeField] private LineRenderer lineRenderer;
-        [SerializeField] private LayerMask hitLayer;
-        [SerializeField] private GameObject damageParticle;
+
+        [Space]
+        [Header("Settings")]
         [SerializeField] private float length;
         [SerializeField] private int damage;
         [SerializeField] private float tickSpeed = 0.1f;
+        [SerializeField] private LayerMask hitLayer;
+
+        [Space]
+        [Header("Particles")]
+        [SerializeField] private GameObject damageParticle;
 
         private BoolStack stack = new BoolStack();
         private Coroutine tickCoroutine;

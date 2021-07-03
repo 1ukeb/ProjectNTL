@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace NTL.Input
 {
-    [CreateAssetMenu(menuName = "NTL/Input/Input Map")]
+    [CreateAssetMenu(menuName = "NTL/Input Map")]
     public class InputMapSO : ScriptableObject
     {
         public string valids;
