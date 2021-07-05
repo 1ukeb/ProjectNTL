@@ -10,7 +10,7 @@ namespace NTL.Gameplay
     [CreateAssetMenu(menuName = "NTL/Powerups/Seeking Bullet")]
     public class SeekingBulletPowerupSO : PowerupSO
     {
-        public float bulletAmount;
+        public int bulletAmount;
         public GameObject bulletPrefab;
         public float bulletRisingSpeed;
         public float bulletSpeed;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd54fa486f3a8394eafabb1fdb83b54c, type: 3}
   m_Name: BasicSeekingBullet
   m_EditorClassIdentifier: 
-  bulletAmount: 1
+  bulletAmount: 0
   bulletPrefab: {fileID: 4358301344539699186, guid: 66a2dbf7355b8d74c92ae69e8803f1e7, type: 3}
   bulletRisingSpeed: 15
   bulletSpeed: 40

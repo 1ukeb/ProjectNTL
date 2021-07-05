@@ -1,4 +1,5 @@
 using UnityEngine;
+using TinyTools.Audio;
 
 namespace NTL.Gameplay
 {
@@ -23,6 +24,10 @@ namespace NTL.Gameplay
         [Space]
         [Header("Particles")]
         [SerializeField] private GameObject deathParticle;
+
+        [Space]
+        [Header("Sound")]
+        [SerializeField] private SoundSO deathSoundSO;
 
         private BoolStack immuneStack = new BoolStack();
         public void AddImmune() => SetIsImmune(immuneStack.Add());
@@ -67,6 +72,8 @@ namespace NTL.Gameplay
         public virtual void Die()
         {
             isDead = true;
+
+            deathSoundSO.Play(transform.position);
 
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);

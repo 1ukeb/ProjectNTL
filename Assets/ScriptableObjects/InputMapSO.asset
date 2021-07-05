@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5739e0fbbe3c2b44ebcea82f7256222b, type: 3}
   m_Name: InputMapSO
   m_EditorClassIdentifier: 
-  valids: qwertyuiop
+  valids: qwertyuiopasdfghjklzxcvbnm

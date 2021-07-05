@@ -38,7 +38,11 @@ namespace NTL.Camera
         {
             Vector3 centerPoint = GetTargetCenter();
             Vector3 newPosition = centerPoint + offset;
-            transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, moveSmoothTime * Time.deltaTime);
+            Vector3 newPos = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, moveSmoothTime * Time.deltaTime);
+            
+            // dont follow tanks on y axis
+            newPos.y = offset.y;
+            transform.position = newPos;
         }
 
         private void Zoom()
