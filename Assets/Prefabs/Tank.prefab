@@ -610,6 +610,7 @@ GameObject:
   - component: {fileID: 1254881957}
   - component: {fileID: 985653287}
   - component: {fileID: 1065108007}
+  - component: {fileID: 3223229751244426566}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
@@ -650,7 +651,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 1
 --- !u!65 &2109774959
 BoxCollider:
@@ -661,7 +662,7 @@ BoxCollider:
   m_GameObject: {fileID: 8013906193459264701}
   m_Material: {fileID: 13400000, guid: 86cf9d9d514e22e4b9f6dc6c1fd3215e, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.7, y: 1.8, z: 2.25}
   m_Center: {x: 0, y: 0.875, z: 0}
@@ -876,6 +877,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &3223229751244426566
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013906193459264701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &8013906193769034834
 GameObject:
   m_ObjectHideFlags: 0
